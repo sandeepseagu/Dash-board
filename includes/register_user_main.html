@@ -1,0 +1,153 @@
+<div class="container body">
+  <div class="main_container">
+
+    {% include 'sidebar.html' %}
+    {% include 'topbar.html' %}
+
+    <div class="right_col" role="main">
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1>Register User</h1>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>New User</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div id="wizard" class="form_wizard wizard_horizontal">
+                  <ul class="wizard_steps">
+                    <li>
+                      <a href="#step-1">
+                        <span class="step_no">1</span>
+                        <span class="step_descr">
+                          Step 1<br/>
+                          <small>User data</small>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#step-2">
+                        <span class="step_no">2</span>
+                        <span class="step_descr">
+                          Step 2<br/>
+                          <small>User profile</small>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <form id="registration_form" method="POST" enctype="multipart/form-data">
+                    <div id="step-1">
+                      <!-- Username -->
+                      <div>
+                        <label class="register_user_label">Username:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="username" id="username" required="required">
+                        </label>
+                      </div>
+
+                      <!-- Email -->
+                      <div>
+                        <label class="register_user_label">Email:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="email" id="email" required="required">
+                        </label>
+                      </div>
+
+                      <!-- Password -->
+                      <div>
+                        <label class="register_user_label">Password:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="password" style="width:100%;" name="password_1" id="password_1" required="required">
+                        </label>
+                      </div>
+
+                      <!-- Repeat Password -->
+                      <div>
+                        <label class="register_user_label">Repeat password:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="password" style="width:100%;" name="password_2" id="password_2" required="required">
+                        </label>
+                      </div>
+
+                      <!-- User type -->
+                      <div>
+                        <label class="register_user_label">User type:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <select id="role" name="role">
+                          </select>
+                        </label>
+                      </div>
+
+                      <!-- Stores -->
+                      <div>
+                        <label class="register_user_label">User stores:&nbsp;</label>
+                        <div class="col-md-offset-3 col-md-7">
+                          <label class="input">
+                            <ul id="stores">
+                            </ul>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="step-2">
+                      <!-- First name -->
+                      <div>
+                        <label class="register_user_label">First name:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="first_name" id="first_name">
+                        </label>
+                      </div>
+
+                      <!-- Last name -->
+                      <div>
+                        <label class="register_user_label">Last name:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="last_name" id="last_name">
+                        </label>
+                      </div>
+
+                      <!-- Address -->
+                      <div>
+                        <label class="register_user_label">Address:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="address" id="address">
+                        </label>
+                      </div>
+
+                      <!-- Phone -->
+                      <div>
+                        <label class="register_user_label">Phone:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="text" style="width:100%;" name="phone" id="phone">
+                        </label>
+                      </div>
+
+                      <!-- Picture -->
+                      <div>
+                        <label class="register_user_label">Picture:&nbsp;</label>
+                        <label class="input register_user_m_textbox">
+                          <input type="file" style="width:100%;" name="picture" id="picture">
+                        </label>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include 'footer.html' %}
+
+</div>
+
+<!-- Custom Theme Scripts -->
+<script src="static/js/core/sidebar.js"></script>
+<script src="static/js/register_user.js"></script>

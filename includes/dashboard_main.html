@@ -1,0 +1,319 @@
+<div class="container body">
+  <div class="main_container">
+
+    {% include 'sidebar.html' %}
+    {% include 'topbar.html' %}
+
+    <!-- page content -->
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          {% include 'filterbar_multiple.html' %}
+        </div>
+      </div>
+      <!-- titles -->
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <!-- <h2 id="store_title"></h2> -->
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+          </div>
+        </div>
+      </div>
+      <!-- titles -->
+
+      <!-- top tiles -->
+      <div class="row tile_count no-bottom-pad-margin">
+        <div class="x_panel tile overflow_hidden">
+          <div class="x_content">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-usd"></i> Total sales</span>
+              <div class="count" id="total_sales"></div>
+              <span class="count_bottom" id="total_sales_percentage_change"></span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-credit-card"></i> Cards dispensed</span>
+              <div class="count" id="cards_dispensed"></div>
+              <span class="count_bottom" id="cards_dispense_percentage_change"></span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-credit-card"></i> Funds Added</span>
+              <div class="count" id="funds_added"></div>
+              <span class="count_bottom" id="funds_added_percentage_change"></span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-user"></i> Unique customers</span>
+              <div class="count" id="unique_customers"></div>
+              <span class="count_bottom" id="unique_customers_percentage_change"></span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-columns"></i> Current Float</span>
+              <div class="count" id="float"></div>
+              <span class="count_bottom">&nbsp;</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count no-bottom-pad-margin">
+              <span class="count_top"><i class="fa fa-repeat"></i> Avg no of turns per day</span>
+              <div class="count" id="avg_no_of_turns"></div>
+              <span class="count_bottom" id="avg_no_of_turns_percentage_change"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /top tiles -->
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="dashboard_graph">
+
+            <div class="row x_title">
+              <div class="col-md-6">
+                <h3>Sales <small>per day</small></h3>
+              </div>
+            </div>
+
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <div id="sales_per_day_container" class="sales_per_day_chart">
+                <canvas id="sales_per_day"></canvas>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+              <div class="x_title">
+                <h2>Machine usage</h2>
+                <div class="clearfix"></div>
+              </div>
+              
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <div>
+                  <p>Washer</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div id="washer_count" class="progress-bar bg-blue" role="progressbar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p>Dryer</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div id="dryer_count" class="progress-bar bg-red" role="progressbar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <div>
+                  <p>Vending</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div id="vending_count" class="progress-bar bg-green" role="progressbar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel tile fixed_height_320 overflow_hidden">
+            <div class="x_title">
+              <h2>Cash vs. Credit Card</h2>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                  <p><b>Chart</b></p>
+                  <div id="cash_vs_credit_container">
+                    <canvas id="cash_vs_credit"></canvas>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                  <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class=""><b>Payment type</b></p>
+                    <p><i class="fa fa-square blue"></i> Cash </p>
+                    <p><i class="fa fa-square red"></i> Credit Card </p>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <p class=""><b>% Use</b></p>
+                    <p id="cash_percentage">-</p>
+                    <p id="credit_percentage">-</p>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class=""><b>Amount</b></p>
+                    <p id="cash_value">-</p>
+                    <p id="credit_value">-</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+              <h2>Sales per Hour</h2>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="sales_per_hour_container">
+                <canvas id="sales_per_hour"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+              <h2>Sales by Model</h2>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="sales_by_model_container">
+                <canvas id="sales_by_model"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+              <h2>Sales by Store</h2>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="sales_by_store_container">
+                <canvas id="sales_by_store"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Recent Activities <small>Sessions</small></h2>
+              
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="dashboard-widget-content">
+
+                <ul class="list-unstyled timeline widget">
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a>Machine #12 stopped</a>
+                        </h2>
+                        <div class="byline">
+                          <span>2 minutes ago</span>
+                        </div>
+                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a>Machine #12 started</a>
+                        </h2>
+                        <div class="byline">
+                          <span>11 minutes ago</span>
+                        </div>
+                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a>Machine #3 stopped</a>
+                        </h2>
+                        <div class="byline">
+                          <span>23 minutes ago</span>
+                        </div>
+                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a>New card dispensed by machine #4</a>
+                        </h2>
+                        <div class="byline">
+                          <span>1 hour ago</span>
+                        </div>
+                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Start to do list -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>To Do List <small>Sample tasks</small></h2>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <div class="">
+                <ul class="to_do">
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Fix machine #11</p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Check employees hours</p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Process payroll</p>
+                  </li>
+                </ul>
+                <button class="btn btn-success pull-right">Mark as done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End to do list -->
+      </div>
+    </div>
+    <!-- /page content -->
+
+    {% include 'footer.html' %}
+
+  </div>
+</div>
+
+<!-- Custom Theme Scripts -->
+<script src="static/js/core/sidebar.js"></script>
+<script src="static/js/charts.js"></script>
+<script src="static/js/index.js"></script>

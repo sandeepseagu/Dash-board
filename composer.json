@@ -1,0 +1,6 @@
+{
+    "require": {
+        "delight-im/auth": "^8.1",
+        "google/recaptcha": "^1.2"
+    }
+}

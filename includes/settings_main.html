@@ -1,0 +1,217 @@
+<div class="container body">
+  <div class="main_container">
+
+    {% include 'sidebar.html' %}
+    {% include 'topbar.html' %}
+
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          {% include 'filterbar.html' %}
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1>Settings <small>(<span id="store_name">Country Club</span>)</small></h1>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Machines prices</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <!-- start accordion -->
+                  <div class="accordion" id="machines_prices_accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                      <a class="panel-heading" role="tab" id="washer_heading" data-toggle="collapse" data-parent="#machines_prices_accordion" href="#washer_collapse" aria-expanded="true" aria-controls="washer_collapse">
+                        <h4 class="panel-title">Washer</h4>
+                      </a>
+                      <div id="washer_collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="washer_heading">
+                        <div class="panel-body">
+                          <div id="washer_price_div"></div>
+                          <button type="button" id="washers_price_submit_btn" class="btn btn-success pull-right">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel">
+                      <a class="panel-heading collapsed" role="tab" id="dryer_heading" data-toggle="collapse" data-parent="#machines_prices_accordion" href="#dryer_collapse" aria-expanded="false" aria-controls="dryer_collapse">
+                        <h4 class="panel-title">Dryer</h4>
+                      </a>
+                      <div id="dryer_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dryer_heading">
+                        <div class="panel-body">
+                          <div id="dryer_price_div"></div>
+                          <button type="button" id="dryers_price_submit_btn" class="btn btn-success pull-right">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel">
+                      <a class="panel-heading collapsed" role="tab" id="vending_heading" data-toggle="collapse" data-parent="#machines_prices_accordion" href="#veinding_collapse" aria-expanded="false" aria-controls="veinding_collapse">
+                        <h4 class="panel-title">Vending</h4>
+                      </a>
+                      <div id="veinding_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vending_heading">
+                        <div class="panel-body">
+                          <div id="vending_price_div"></div>
+                          <button type="button" id="vendings_price_submit_btn" class="btn btn-success pull-right">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of accordion -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Machines settings</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <!-- start accordion -->
+                  <div class="accordion" id="machines_settings_accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                      <a class="panel-heading" role="tab" id="display_time_heading" data-toggle="collapse" data-parent="#machines_settings_accordion" href="#display_time_collapse" aria-expanded="true" aria-controls="display_time_collapse">
+                        <h4 class="panel-title">Balance display time</h4>
+                      </a>
+                      <div id="display_time_collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="display_time_heading">
+                        <div class="panel-body">
+                          <div class="tab-pane active" id="balance_display_time"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel">
+                      <a class="panel-heading collapsed" role="tab" id="cycle_time_heading" data-toggle="collapse" data-parent="#machines_settings_accordion" href="#cycle_time_collapse" aria-expanded="false" aria-controls="cycle_time_collapse">
+                        <h4 class="panel-title">Cycle time</h4>
+                      </a>
+                      <div id="cycle_time_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cycle_time_heading">
+                        <div class="panel-body">
+                          <div class="tab-pane" id="cycle_time">
+                            <div class="row align-items-center">
+                              <div class="col">
+                                <div id="washer_runtime_table"></div>
+                                <button type="button" id="update_washer_runtime_btn" class="btn btn-success pull-right">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel">
+                      <a class="panel-heading collapsed" role="tab" id="manage_machines_heading" data-toggle="collapse" data-parent="#machines_settings_accordion" href="#manage_machines_collapse" aria-expanded="false" aria-controls="manage_machines_collapse">
+                        <h4 class="panel-title">Manage machines</h4>
+                      </a>
+                      <div id="manage_machines_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="manage_machines_heading">
+                        <div class="panel-body">
+                          <div class="tab-pane" id="manage_machines">
+                            <div id="start_machine_details">
+                              <div class="col">
+                                <h4>
+                                  Select Machine:
+                                </h4>
+                              </div>
+                              <div class="col">
+                                <span id="machines">
+                                  <div class="dropdown" id="machine_list">
+                                  </div>
+                                </span>
+                              </div>
+                              <div>
+                                <br>
+                                <button type="button" class="btn btn-success pull-right"  name="start_machine" value="start_machine" id="start_machine-btn">Start Machine</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of accordion -->
+
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>System settings</h2>
+                
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div class="">
+
+                  <!-- Card retrieval -->
+                  <div>
+                    <label class="settings_label">Card Retrieval&nbsp;</label><input class="js-switch" type="checkbox" id="card_retrieval">
+                  </div>
+                  <!-- End card retrieval -->
+
+                  <!-- Registration message -->
+                  <div>
+                    <label class="settings_label">Registration Message&nbsp;</label><input class="js-switch" type="checkbox" id="registration_message">
+                  </div>
+                  <!-- End registration message -->
+
+                  <!-- Edit registration message -->
+                  <div>
+                    <label class="settings_label">Edit Registration Message:</label>
+                    <label class="input settings_m_textbox">
+                      <textarea style="width:100%;" id="registration_message_text"></textarea>
+                    </label>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-success pull-right" id="registration_message_change_button">Submit</button>
+                  </div>
+                  <!-- End edit registration message -->
+                  <br>
+                  <br>
+                  <div class="clearfix"></div>
+
+                  <!-- Min credit card value -->
+                  <div>
+                    <label class="settings_label">Minimum Credit Card Transactions Value:</label>
+                    <label class="input settings_m_textbox">
+                      <input type="text" style="width:100%;" id="minimum_credit_card_value">
+                    </label>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-success pull-right" id="min_credit_card_val">Submit</button>
+                  </div>
+                  <!-- End min credit card value -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include 'footer.html' %}
+
+</div>
+
+<!-- Custom Theme Scripts -->
+<script src="static/js/core/sidebar.js"></script>
+<script src="static/js/settings.js"></script>

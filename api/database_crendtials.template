@@ -1,0 +1,7 @@
+<?php
+$DB_HOST= '66.57.181.195';
+$DB_USERNAME= 'root';
+$DB_PASSWORD= 'A5348513';
+$DB_NAME= 'ips_test';
+$DB_CHARSET='latin1';
+?>

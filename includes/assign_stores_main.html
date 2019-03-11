@@ -1,0 +1,57 @@
+<div class="container body">
+  <div class="main_container">
+
+    {% include 'sidebar.html' %}
+    {% include 'topbar.html' %}
+
+    <div class="right_col" role="main">
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1>Assign stores</h1>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Assign stores</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <form id="assign_stores_form" method="POST">
+                  <!-- User -->
+                  <div>
+                    <label id="stores_label" class="assign_stores_label">User:&nbsp;</label>
+                    <label class="input">
+                      <select name="user_id" id="users"></select>
+                    </label>
+                  </div>
+
+                  <div class="ln_solid"></div>
+
+                  <!-- Stores -->
+                  <div>
+                    <label id="stores_label" class="assign_stores_label">User stores:&nbsp;</label></div>
+                    <div class="col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-md-10 col-sm-10 col-xs-10">
+                      <label class="input">
+                        <ul id="stores" style="list-style-type: none;" class="ul-break">
+                        </ul>
+                      </label>
+                    </div>
+                  </div>
+                  <button id="assign_stores_button" type="button" class="btn btn-success pull-right">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include 'footer.html' %}
+
+</div>
+
+<!-- Custom Theme Scripts -->
+<script src="static/js/core/sidebar.js"></script>
+<script src="static/js/assign_stores.js"></script>

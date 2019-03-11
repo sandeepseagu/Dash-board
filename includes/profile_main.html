@@ -1,0 +1,200 @@
+<div class="container body">
+  <div class="main_container">
+
+    {% include 'sidebar.html' %}
+    {% include 'topbar.html' %}
+
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1>User profile</h1>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Edit user profile</h2>
+                
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <!-- USERNAME FORM -->
+                <form id="username_form" method="POST" data-parsley-validate class="form-horizontal form-label-left">
+                  <input type="hidden" name="user_id">
+                  <h2>Username&nbsp;&nbsp;&nbsp;<a href="" id="edit_username_on"><i class="fa fa-pencil"></i></a><a class="hidden" href="" id="edit_username_off"><i class="fa fa-close"></i></a></h2>
+                  <!-- Username -->
+                  <div>
+                    <label class="profile_label">Username:&nbsp;</label>
+                    <span id="username_previous_div">
+                    </span>
+                    <span id="username_div" class="hidden">
+                      <label class="input profile_m_textbox">
+                        <input type="text" name="username" id="username">
+                      </label>
+                    </span>
+                  </div>
+                  <!-- Submit button -->
+                  <div style="display: none;" id="username_form_button_div">
+                    <button id="username_form_button" type="submit" class="btn btn-success pull-right">Submit</button>
+                  </div>
+                  <br>
+                  <div class="ln_solid"></div>
+                </form>
+
+
+                <!-- PASSWORD FORM -->
+                <form id="password_form" method="POST" data-parsley-validate class="form-horizontal form-label-left">
+                  <input type="hidden" name="user_id">
+                  <h2>Password&nbsp;&nbsp;&nbsp;<a href="" id="edit_password_on"><i class="fa fa-pencil"></i></a><a class="hidden" href="" id="edit_password_off"><i class="fa fa-close"></i></a></h2>
+                  <!-- Password -->
+                  <div id="password_previous_div">
+                    <label class="profile_label">Password:&nbsp;</label>
+                    <span>&#9679;&#9679;&#9679;&#9679;&#9679;</span>
+                  </div>
+                  <div id="password_div" class="hidden">
+                    <div>
+                      <label class="profile_label">Old password:&nbsp;</label>
+                      <label class="input profile_m_textbox">
+                        <input type="password" style="width:85%;" name="old_password" id="old_password">
+                      </label>
+                    </div>
+                    <div>
+                      <label class="profile_label">New password:&nbsp;</label>
+                      <label class="input profile_m_textbox">
+                        <input type="password" style="width:85%;" name="new_password_1" id="new_password_1">
+                      </label>
+                    </div>
+                    <div>
+                      <label class="profile_label">Repeat new password:&nbsp;</label>
+                      <label class="input profile_m_textbox">
+                        <input type="password" style="width:85%;" name="new_password_2" id="new_password_2">
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div style="display: none;" id="password_form_button_div">
+                    <button id="password_form_button" type="submit" class="btn btn-success pull-right">Submit</button>
+                  </div>
+                  <br>
+                  <div class="ln_solid"></div>
+                </form>
+
+
+                <!-- USER PROFILE FORM -->
+                <form id="user_profile_form" method="POST" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                  <input type="hidden" name="user_id">
+                  <h2>User profile&nbsp;&nbsp;&nbsp;<a href="" id="edit_user_profile_on"><i class="fa fa-pencil"></i></a><a class="hidden" href="" id="edit_user_profile_off"><i class="fa fa-close"></i></a></h2>
+                  <div id="user_profile_previous_div">
+                    <!-- First name -->
+                    <div>
+                      <label class="profile_label">First name:&nbsp;</label>
+                      <span id="first_name_previous_div">
+                        <span>-</span>
+                      </span>
+                    </div>
+                    <!-- Last name -->
+                    <div>
+                      <label class="profile_label">Last name:&nbsp;</label>
+                      <span id="last_name_previous_div">
+                        <span>-</span>
+                      </span>
+                    </div>
+                    <!-- Phone -->
+                    <div>
+                      <label class="profile_label">Phone:&nbsp;</label>
+                      <span id="phone_previous_div">
+                        <span>-</span>
+                      </span>
+                    </div>
+                    <!-- Address -->
+                    <div>
+                      <label class="profile_label">Address:&nbsp;</label>
+                      <span id="address_previous_div">
+                        <span>-</span>
+                      </span>
+                    </div>
+                    <!-- Picture -->
+                    <div>
+                      <label class="profile_label">Picture:&nbsp;</label>
+                      <span id="picture_previous_div">
+                        <span>-</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div id="user_profile_div" class="hidden">
+                    <!-- First name -->
+                    <div>
+                      <label class="profile_label">First name:&nbsp;</label>
+                      <span id="first_name_div">
+                        <label class="input profile_m_textbox">
+                          <input type="text" class="profile_m_textbox" name="first_name" id="first_name">
+                        </label>
+                      </span>
+                    </div>
+                    <!-- Last name -->
+                    <div>
+                      <label class="profile_label">Last name:&nbsp;</label>
+                      <span id="last_name_div">
+                        <label class="input profile_m_textbox">
+                          <input type="text" class="profile_m_textbox" name="last_name" id="last_name">
+                        </label>
+                      </span>
+                    </div>
+                    <!-- Phone -->
+                    <div>
+                      <label class="profile_label">Phone:&nbsp;</label>
+                      <span id="phone_div">
+                        <label class="input profile_m_textbox">
+                          <input type="text" class="profile_m_textbox" name="phone" id="phone">
+                        </label>
+                      </span>
+                    </div>
+                    <!-- Address -->
+                    <div>
+                      <label class="profile_label">Address:&nbsp;</label>
+                      <span id="address_div">
+                        <label class="input profile_m_textbox">
+                          <input type="text" class="profile_m_textbox" name="address" id="address">
+                        </label>
+                      </span>
+                    </div>
+                    <!-- Picture -->
+                    <div>
+                      <label class="profile_label">Picture:&nbsp;</label>
+                      <span id="picture_div">
+                        <label class="input profile_m_textbox">
+                          <input type="file" class="profile_m_textbox" name="picture" id="picture">
+                        </label>
+                      </span>
+                    </div>
+                    <!-- Submit button -->
+                    <div style="display: none;" id="user_profile_form_button_div">
+                      <button id="user_profiles_form_button" type="submit" class="btn btn-success pull-right">Submit</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+  </div>
+</div>
+
+<!-- Custom Theme Scripts -->
+<script src="static/js/core/sidebar.js"></script>
+<script src="static/js/profile.js"></script>

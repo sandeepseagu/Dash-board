@@ -1,0 +1,16 @@
+.
+├── api
+│   ├── get_stores.php
+│   └── ...
+├── static                      # Static files
+│   ├── css                     # Our css files
+│   ├── handlebars_templates    # Handlebars templates
+│   ├── images                  # Our static images files
+│   ├── js                      # Our js files
+│   │   ├── charts.js           # One js per conceptual component
+│   │   ├── calendar.js
+│   │   └── ...
+│   └── third_party             # Third-party packages (bootstrap, jquery, etc)
+├── index.html
+├── index_admin.html
+└── ...
